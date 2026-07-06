@@ -79,8 +79,7 @@ export default function Home() {
             Elevate Your <span>Style.</span>
           </h1>
           <p>
-            Find the perfect shade for every moment, from soft everyday lenses
-            to statement frames that finish the whole look.
+            Find the perfect shade for every moment.
           </p>
           <a className="primary-link" href="#shop">
             Shop now <ArrowRight size={18} />

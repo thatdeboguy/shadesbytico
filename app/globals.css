@@ -116,8 +116,8 @@ button {
 .hero {
   min-height: calc(100svh - 88px);
   display: grid;
-  align-items: center;
-  padding: clamp(44px, 7vw, 90px) clamp(20px, 7vw, 92px);
+  align-items: start;
+  padding: clamp(24px, 3vw, 38px) clamp(20px, 7vw, 92px) clamp(44px, 7vw, 90px);
   color: white;
   background:
     linear-gradient(90deg, rgba(15, 12, 10, 0.92) 0%, rgba(15, 12, 10, 0.72) 36%, rgba(15, 12, 10, 0.1) 74%),
@@ -341,7 +341,7 @@ button {
   .hero {
     min-height: calc(100svh - 76px);
     align-items: start;
-    padding-top: 54px;
+    padding-top: 28px;
     background:
       linear-gradient(180deg, rgba(15, 12, 10, 0.92) 0%, rgba(15, 12, 10, 0.76) 42%, rgba(15, 12, 10, 0.12) 100%),
       url("https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1200&q=85") center / cover;
