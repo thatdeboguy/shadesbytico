@@ -46,10 +46,18 @@ export default function Home() {
   return (
     <main>
       <header className="site-header">
+        <button className="mobile-menu-btn" aria-label="Open menu">
+          <Menu size={28} />
+        </button>
+
         <a className="brand" href="#home" aria-label="The Shade Room home">
-          <span>The</span>
-          <strong>Shade Room</strong>
-          <em>by Tico</em>
+          <div className="brand-the">
+            <span className="line"></span>
+            <span>The</span>
+            <span className="line"></span>
+          </div>
+          <strong className="brand-title">Shade Room</strong>
+          <span className="brand-by">by Tico</span>
         </a>
 
         <nav className="desktop-nav" aria-label="Main navigation">
@@ -60,30 +68,30 @@ export default function Home() {
         </nav>
 
         <div className="header-actions">
-          <button aria-label="Search">
+          <button aria-label="Search" className="search-btn">
             <Search size={21} />
           </button>
-          <button aria-label="Cart">
+          <button aria-label="Cart" className="cart-btn">
             <ShoppingBag size={21} />
-          </button>
-          <button className="mobile-menu" aria-label="Open menu">
-            <Menu size={22} />
           </button>
         </div>
       </header>
 
       <section className="hero" id="home">
         <div className="hero-copy">
-          <p className="eyebrow">New season essentials</p>
-          <h1>
-            Elevate Your <span>Style.</span>
+          <h1 className="hero-title">
+            <span className="desktop-only-text">Elevate Your</span>
+            <span className="mobile-only-text">Shop Your</span>
+            <span className="script-text">Style.</span>
           </h1>
-          <p>
+          <p className="hero-subtitle">
             Find the perfect shade for every moment.
           </p>
-          <a className="primary-link" href="#shop">
-            Shop now <ArrowRight size={18} />
-          </a>
+          <div className="hero-cta">
+            <a className="primary-link" href="#shop">
+              Shop Now
+            </a>
+          </div>
         </div>
       </section>
 
