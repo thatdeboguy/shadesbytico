@@ -7,9 +7,9 @@
   --gold: #B08047;
   --muted: #786d64;
   --line: rgba(23, 20, 17, 0.08);
-  --font-serif: var(--font-serif), Georgia, serif;
-  --font-sans: var(--font-sans), Arial, sans-serif;
-  --font-script: var(--font-script), cursive;
+  --font-serif: Georgia, "Times New Roman", serif;
+  --font-sans: Arial, Helvetica, sans-serif;
+  --font-script: "Brush Script MT", "Segoe Script", cursive;
 }
 
 * {
@@ -179,7 +179,11 @@ button {
   color: white;
   background:
     linear-gradient(90deg, rgba(15, 12, 10, 0.9) 0%, rgba(15, 12, 10, 0.6) 45%, rgba(15, 12, 10, 0.1) 85%),
-    url("/hero_sunglasses.jpg") center right / cover;
+    url("/hero_sunglasses.jpg");
+  background-color: #17110e;
+  background-position: center, right center;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 100% 100%, auto 100%;
 }
 
 .hero-copy {
@@ -505,6 +509,7 @@ button {
     background:
       linear-gradient(180deg, rgba(15, 12, 10, 0.75) 0%, rgba(15, 12, 10, 0.3) 45%, rgba(15, 12, 10, 0.85) 100%),
       url("/hero_sunglasses.jpg") center bottom / cover;
+    background-repeat: no-repeat;
   }
 
   .hero-copy {
