@@ -47,7 +47,8 @@ export default async function ProductPage({ params }: ProductPageProps) {
         <Link className="back-link" href="/#shop">
           Back to shop
         </Link>
-        <Link className="product-page-brand" href="/">
+        <Link className="product-page-brand logo-link" href="/">
+          <img src="/logo.jpeg" alt="" />
           The Shade Room
         </Link>
       </header>
@@ -68,6 +69,16 @@ export default async function ProductPage({ params }: ProductPageProps) {
             <span>{product.gender}</span>
             <span>{product.soldOut ? "SOLD OUT" : "AVAILABLE"}</span>
           </div>
+
+          {product.soldOut ? (
+            <button className="buy-now-button" disabled type="button">
+              Sold Out
+            </button>
+          ) : (
+            <Link className="buy-now-button" href={`/checkout/${product.slug}`}>
+              Buy Now
+            </Link>
+          )}
         </div>
       </section>
     </main>

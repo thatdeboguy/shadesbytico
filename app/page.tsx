@@ -23,6 +23,7 @@ export default function Home() {
         </button>
 
         <a className="brand" href="#home" aria-label="The Shade Room home">
+          <img className="brand-logo" src="/logo.jpeg" alt="" />
           <div className="brand-the">
             <span className="line"></span>
             <span>The</span>
