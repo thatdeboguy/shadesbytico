@@ -8,6 +8,7 @@ import {
   Star,
   Truck,
 } from "lucide-react";
+import { CurtainIntro } from "./CurtainIntro";
 
 const products = [
   {
@@ -45,6 +46,8 @@ const steps = ["Choose your shades", "Place your order", "Make payment", "Add de
 export default function Home() {
   return (
     <main>
+      <CurtainIntro />
+
       <header className="site-header">
         <button className="mobile-menu-btn" aria-label="Open menu">
           <Menu size={28} />
