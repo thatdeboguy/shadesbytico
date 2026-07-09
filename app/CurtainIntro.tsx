@@ -35,7 +35,7 @@ export function CurtainIntro() {
       onClick={dismissCurtain}
       type="button"
     >
-      <img src="/Images/Product/Cutain image.jpeg" alt="" />
+      <img src="/Images/Product/Curtain image.jpeg" alt="" />
     </button>
   );
 }
