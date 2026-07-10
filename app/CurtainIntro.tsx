@@ -9,13 +9,13 @@ export function CurtainIntro() {
   const [isLeaving, setIsLeaving] = useState(false);
 
   useEffect(() => {
-    if (!window.localStorage.getItem(STORAGE_KEY)) {
+    if (!window.sessionStorage.getItem(STORAGE_KEY)) {
       setShouldShow(true);
     }
   }, []);
 
   function dismissCurtain() {
-    window.localStorage.setItem(STORAGE_KEY, "true");
+    window.sessionStorage.setItem(STORAGE_KEY, "true");
     setIsLeaving(true);
   }
 
