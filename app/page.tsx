@@ -50,23 +50,7 @@ export default function Home() {
         </div>
       </header>
 
-      <section className="hero" id="home">
-        <div className="hero-copy">
-          <h1 className="hero-title">
-            <span className="desktop-only-text">Elevate Your</span>
-            <span className="mobile-only-text">Shop Your</span>
-            <span className="script-text">Style.</span>
-          </h1>
-          <p className="hero-subtitle">
-            Find the perfect shade for every moment.
-          </p>
-          <div className="hero-cta">
-            <a className="primary-link" href="#shop">
-              Shop Now
-            </a>
-          </div>
-        </div>
-      </section>
+      <section className="hero" id="home" aria-label="The Shade Room homepage"></section>
 
       <section className="product-strip" aria-label="Featured services">
         {steps.map((step) => (
