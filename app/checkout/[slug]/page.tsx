@@ -45,7 +45,7 @@ export default async function CheckoutPage({ params }: CheckoutPageProps) {
   }
 
   const message = encodeURIComponent(
-    `Hello, I have made payment for ${product.name}. Here is my receipt.`
+    `Hello, I have made payment for ${product.name}. Here is my receipt (attach receipt):\n\nHere is my Delivery Address:`
   );
   const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
 

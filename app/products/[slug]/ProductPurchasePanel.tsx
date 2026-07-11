@@ -20,7 +20,7 @@ export function ProductPurchasePanel({
 }: ProductPurchasePanelProps) {
   const [isCheckingOut, setIsCheckingOut] = useState(false);
   const message = encodeURIComponent(
-    `Hello, I have made payment for ${name}. Here is my receipt.`
+    `Hello, I have made payment for ${name}. Here is my receipt (attach receipt):\n\nHere is my Delivery Address:`
   );
   const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
 
