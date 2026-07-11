@@ -1,13 +1,12 @@
 import Link from "next/link";
 import {
-  Menu,
   Search,
   ShoppingBag,
+  ShoppingCart,
   SlidersHorizontal,
   Star,
   Truck,
 } from "lucide-react";
-import { CurtainIntro } from "./CurtainIntro";
 import { products } from "./data/products";
 
 const steps = ["Choose your shades", "Place your order", "Make payment", "Add delivery details"];
@@ -15,13 +14,7 @@ const steps = ["Choose your shades", "Place your order", "Make payment", "Add de
 export default function Home() {
   return (
     <main>
-      <CurtainIntro />
-
       <header className="site-header">
-        <button className="mobile-menu-btn" aria-label="Open menu">
-          <Menu size={28} />
-        </button>
-
         <a className="brand" href="#home" aria-label="The Shade Room home">
           <img className="brand-logo" src="/logo.jpeg" alt="" />
           <div className="brand-the">
@@ -50,7 +43,12 @@ export default function Home() {
         </div>
       </header>
 
-      <section className="hero" id="home" aria-label="The Shade Room homepage"></section>
+      <section className="hero" id="home" aria-label="The Shade Room homepage">
+        <a className="mobile-shop-now" href="#shop">
+          <ShoppingCart size={20} aria-hidden="true" />
+          <span>Shop Now</span>
+        </a>
+      </section>
 
       <section className="product-strip" aria-label="Featured services">
         {steps.map((step) => (
