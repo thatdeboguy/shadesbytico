@@ -3,7 +3,6 @@ import {
   Search,
   ShoppingBag,
   ShoppingCart,
-  SlidersHorizontal,
   Star,
   Truck,
 } from "lucide-react";
@@ -64,10 +63,6 @@ export default function Home() {
           <div>
             <h2>Featured shades</h2>
           </div>
-          <button className="filter-button">
-            <SlidersHorizontal size={18} />
-            Filter
-          </button>
         </div>
 
         <div className="product-grid">
