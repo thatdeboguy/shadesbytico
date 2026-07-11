@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getProductBySlug, products } from "../../data/products";
+import { ProductPurchasePanel } from "./ProductPurchasePanel";
 
 type ProductPageProps = {
   params: Promise<{
@@ -60,25 +61,12 @@ export default async function ProductPage({ params }: ProductPageProps) {
           ))}
         </div>
 
-        <div className="product-detail-info">
-          <h1>{product.name}</h1>
-          <strong className="product-detail-price">{product.price}</strong>
-
-          <div className="product-properties" aria-label="Product properties">
-            <span>{product.gender}</span>
-            <span>{product.soldOut ? "SOLD OUT" : "AVAILABLE"}</span>
-          </div>
-
-          {product.soldOut ? (
-            <button className="buy-now-button" disabled type="button">
-              Sold Out
-            </button>
-          ) : (
-            <Link className="buy-now-button" href={`/checkout/${product.slug}`}>
-              Buy Now
-            </Link>
-          )}
-        </div>
+        <ProductPurchasePanel
+          gender={product.gender}
+          name={product.name}
+          price={product.price}
+          soldOut={product.soldOut}
+        />
       </section>
     </main>
   );

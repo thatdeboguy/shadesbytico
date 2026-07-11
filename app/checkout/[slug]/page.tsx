@@ -2,11 +2,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getProductBySlug, products } from "../../data/products";
+import { CopyableBankDetails } from "../../CopyableBankDetails";
 
 const WHATSAPP_NUMBER = "2349036419473";
-const BANK_NAME = "Moniepoint MFB";
-const ACCOUNT_NUMBER = "9036419473";
-const ACCOUNT_NAME = "Merit Aimienwan Okoh";
 
 type CheckoutPageProps = {
   params: Promise<{
@@ -74,14 +72,7 @@ export default async function CheckoutPage({ params }: CheckoutPageProps) {
           <h1>{product.name}</h1>
           <strong className="product-detail-price">{product.price}</strong>
 
-          <div className="bank-card" aria-label="Bank transfer information">
-            <span>Bank</span>
-            <strong>{BANK_NAME}</strong>
-            <span>Account Number</span>
-            <strong>{ACCOUNT_NUMBER}</strong>
-            <span>Account Name</span>
-            <strong>{ACCOUNT_NAME}</strong>
-          </div>
+          <CopyableBankDetails />
 
           <a
             className="buy-now-button receipt-button"
