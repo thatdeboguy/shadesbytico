@@ -61,7 +61,6 @@ export default async function ProductPage({ params }: ProductPageProps) {
         </div>
 
         <div className="product-detail-info">
-          <p className="eyebrow">The Shade Room by Tico</p>
           <h1>{product.name}</h1>
           <strong className="product-detail-price">{product.price}</strong>
 

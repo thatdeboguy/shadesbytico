@@ -62,7 +62,6 @@ export default function Home() {
       <section className="shop-section" id="shop">
         <div className="section-heading">
           <div>
-            <p className="eyebrow">Shop the edit</p>
             <h2>Featured shades</h2>
           </div>
           <button className="filter-button">
@@ -90,7 +89,6 @@ export default function Home() {
 
       <section className="about-section" id="about">
         <div>
-          <p className="eyebrow">The Shade Room by Tico</p>
           <h2>Made for quick, confident shopping.</h2>
         </div>
         <p>

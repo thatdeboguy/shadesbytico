@@ -71,7 +71,6 @@ export default async function CheckoutPage({ params }: CheckoutPageProps) {
         />
 
         <div className="checkout-details">
-          <p className="eyebrow">Payment</p>
           <h1>{product.name}</h1>
           <strong className="product-detail-price">{product.price}</strong>
 

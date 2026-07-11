@@ -8,8 +8,8 @@
   --muted: #786d64;
   --line: rgba(23, 20, 17, 0.08);
   --font-serif: Georgia, "Times New Roman", serif;
-  --font-sans: Arial, Helvetica, sans-serif;
-  --font-script: "Brush Script MT", "Segoe Script", cursive;
+  --font-sans: Georgia, "Times New Roman", serif;
+  --font-script: Georgia, "Times New Roman", serif;
 }
 
 * {
@@ -116,7 +116,7 @@ button {
 .desktop-nav {
   display: flex;
   gap: clamp(20px, 4vw, 54px);
-  font-size: 0.78rem;
+  font-size: 0.9rem;
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
