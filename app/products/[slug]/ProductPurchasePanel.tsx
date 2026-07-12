@@ -6,7 +6,7 @@ import { CopyableBankDetails } from "../../CopyableBankDetails";
 const WHATSAPP_NUMBER = "2349036419473";
 
 type ProductPurchasePanelProps = {
-  gender: string;
+  gender?: string;
   name: string;
   price: string;
   soldOut: boolean;
@@ -20,7 +20,7 @@ export function ProductPurchasePanel({
 }: ProductPurchasePanelProps) {
   const [isCheckingOut, setIsCheckingOut] = useState(false);
   const message = encodeURIComponent(
-    `Hello, I have made payment for ${name}. Here is my receipt (attach receipt):\n\nHere is my Delivery Address:`
+    `Hello, I have made payment for ${name}. Here is my receipt (attach receipt):\n\nHere is my Delivery Address and phone number:`
   );
   const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
 
@@ -55,7 +55,7 @@ export function ProductPurchasePanel({
       <strong className="product-detail-price">{price}</strong>
 
       <div className="product-properties" aria-label="Product properties">
-        <span>{gender}</span>
+        {gender && <span>{gender}</span>}
         <span>{soldOut ? "SOLD OUT" : "AVAILABLE"}</span>
       </div>
 

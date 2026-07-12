@@ -1,4 +1,3 @@
-import Link from "next/link";
 import {
   Search,
   ShoppingBag,
@@ -7,6 +6,7 @@ import {
   Truck,
 } from "lucide-react";
 import { products } from "./data/products";
+import { ProductCatalog } from "./ProductCatalog";
 
 const steps = ["Choose your shades", "Place your order", "Make payment", "Add delivery details"];
 
@@ -65,21 +65,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="product-grid">
-          {products.map((product) => (
-            <Link
-              className="product-card"
-              href={`/products/${product.slug}`}
-              key={product.slug}
-            >
-              <img src={product.mainImage} alt={product.name} />
-              <div className="product-info">
-                <h3>{product.name}</h3>
-                <strong>{product.price}</strong>
-              </div>
-            </Link>
-          ))}
-        </div>
+        <ProductCatalog products={products} />
       </section>
 
       <section className="about-section" id="about">

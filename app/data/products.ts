@@ -4,7 +4,7 @@ export type Product = {
   price: string;
   mainImage: string;
   images: string[];
-  gender: "UNISEX";
+  gender?: "UNISEX";
   soldOut: boolean;
 };
 
@@ -20,7 +20,6 @@ export const products: Product[] = [
       productImagePath("Shade room -1, 15k.jpeg"),
       productImagePath("Shade room -1.jpeg"),
     ],
-    gender: "UNISEX",
     soldOut: false,
   },
   {
@@ -33,7 +32,6 @@ export const products: Product[] = [
       productImagePath("Shade room -2.jfif"),
       productImagePath("Shade room -2, model.jfif"),
     ],
-    gender: "UNISEX",
     soldOut: false,
   },
   {
@@ -57,7 +55,6 @@ export const products: Product[] = [
       productImagePath("Shade room -4, 10k.jpeg"),
       productImagePath("Shade room -4.jpeg"),
     ],
-    gender: "UNISEX",
     soldOut: false,
   },
   {
@@ -81,7 +78,6 @@ export const products: Product[] = [
       productImagePath("Shade room -6, 10k.jfif"),
       productImagePath("Shade room -6.jfif"),
     ],
-    gender: "UNISEX",
     soldOut: false,
   },
   {
@@ -105,7 +101,6 @@ export const products: Product[] = [
       productImagePath("Shade room -8, 15k.jfif"),
       productImagePath("Shade room -8.jpeg"),
     ],
-    gender: "UNISEX",
     soldOut: false,
   },
   {
@@ -129,7 +124,6 @@ export const products: Product[] = [
       productImagePath("Shade room -10, 12k.jfif"),
       productImagePath("Shade room -10.jfif"),
     ],
-    gender: "UNISEX",
     soldOut: false,
   },
   {
@@ -237,7 +231,6 @@ export const products: Product[] = [
       productImagePath("Shade room -19, 15k.jfif"),
       productImagePath("Shade room -19.jfif"),
     ],
-    gender: "UNISEX",
     soldOut: false,
   },
   {
