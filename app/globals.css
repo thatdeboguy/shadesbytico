@@ -150,88 +150,6 @@ button {
   transform-origin: left;
 }
 
-.header-actions {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.header-actions button,
-.filter-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid transparent;
-  background: transparent;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.catalog-filters {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
-  margin-top: 28px;
-  padding: 20px;
-  background: #faf7f2;
-  border: 1px solid var(--line);
-}
-
-.catalog-filters label {
-  display: grid;
-  gap: 8px;
-}
-
-.catalog-filters label span {
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.catalog-filters select,
-.catalog-filters input {
-  width: 100%;
-  min-height: 46px;
-  padding: 0 12px;
-  color: var(--ink);
-  background: white;
-  border: 1px solid var(--line);
-  border-radius: 2px;
-  font: inherit;
-}
-
-.catalog-filters select:focus,
-.catalog-filters input:focus {
-  outline: 2px solid var(--gold);
-  outline-offset: 2px;
-}
-
-.filter-results {
-  margin: 18px 0 -18px;
-  color: #6c645b;
-  font-size: 0.9rem;
-}
-
-.no-filter-results {
-  margin-top: 36px;
-  padding: 48px 20px;
-  background: #faf7f2;
-  border: 1px solid var(--line);
-  text-align: center;
-}
-
-.header-actions button {
-  width: 42px;
-  height: 42px;
-  border-radius: 999px;
-}
-
-.header-actions button:hover {
-  background: rgba(23, 20, 17, 0.05);
-  color: var(--gold);
-}
-
 .hero {
   min-height: calc(100svh - 88px);
   background: #080706 url("/Images/Product/Homepage.jpeg") center / contain no-repeat;
@@ -745,18 +663,6 @@ button {
     display: none;
   }
 
-  .header-actions {
-    z-index: 12;
-  }
-
-  .header-actions .search-btn {
-    display: none;
-  }
-
-  .header-actions .cart-btn {
-    display: none;
-  }
-
   .hero {
     display: flex;
     align-items: flex-end;
@@ -817,10 +723,6 @@ button {
   .product-grid {
     grid-template-columns: 1fr;
     gap: 12px;
-  }
-
-  .catalog-filters {
-    grid-template-columns: 1fr;
   }
 
   .product-strip div:nth-child(2) {

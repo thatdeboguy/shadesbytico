@@ -1,6 +1,4 @@
 import {
-  Search,
-  ShoppingBag,
   ShoppingCart,
   Star,
   Truck,
@@ -32,14 +30,6 @@ export default function Home() {
           <a href="#contact">Contact</a>
         </nav>
 
-        <div className="header-actions">
-          <button aria-label="Search" className="search-btn">
-            <Search size={21} />
-          </button>
-          <button aria-label="Cart" className="cart-btn">
-            <ShoppingBag size={21} />
-          </button>
-        </div>
       </header>
 
       <section className="hero" id="home" aria-label="The Shade Room homepage">
@@ -73,9 +63,8 @@ export default function Home() {
           <h2>Made for quick, confident shopping.</h2>
         </div>
         <p>
-          Customers can browse styles, choose a frame, and get the information
-          they need before ordering. This first version is ready to grow into a
-          full storefront with checkout, inventory, and delivery details.
+          You can browse styles, choose a frame, and get the information
+          you need before ordering.
         </p>
       </section>
 
@@ -84,7 +73,12 @@ export default function Home() {
           <Truck size={22} />
           <span>Delivery details can be confirmed after order placement.</span>
         </div>
-        <a className="primary-link dark" href="mailto:hello@shaderoom.example">
+        <a
+          className="primary-link dark"
+          href="https://wa.me/2349036419473"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
           Contact us
         </a>
       </section>
