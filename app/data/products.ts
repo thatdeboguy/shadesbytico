@@ -1,3 +1,6 @@
+import { readdirSync } from "node:fs";
+import { extname, join, parse } from "node:path";
+
 export type Product = {
   slug: string;
   name: string;
@@ -8,256 +11,128 @@ export type Product = {
   soldOut: boolean;
 };
 
-const productImagePath = (fileName: string) => `/Images/Product/${fileName}`;
+const PRODUCT_IMAGE_DIRECTORY = join(process.cwd(), "public", "Images", "Product");
+const PRODUCT_IMAGE_URL = "/Images/Product";
+const SUPPORTED_IMAGE_EXTENSIONS = new Set([
+  ".avif",
+  ".gif",
+  ".jfif",
+  ".jpeg",
+  ".jpg",
+  ".png",
+  ".webp",
+]);
 
-export const products: Product[] = [
-  {
-    slug: "shade-room-1",
-    name: "Shade room -1",
-    price: "₦15,000",
-    mainImage: productImagePath("Shade room -1, 15k.jpeg"),
-    images: [
-      productImagePath("Shade room -1, 15k.jpeg"),
-      productImagePath("Shade room -1.jpeg"),
-    ],
-    soldOut: false,
-  },
-  {
-    slug: "shade-room-2",
-    name: "Shade room -2",
-    price: "₦20,000",
-    mainImage: productImagePath("Shade room -2, 20k.jfif"),
-    images: [
-      productImagePath("Shade room -2, 20k.jfif"),
-      productImagePath("Shade room -2.jfif"),
-      productImagePath("Shade room -2, model.jfif"),
-    ],
-    soldOut: false,
-  },
-  {
-    slug: "shade-room-3",
-    name: "Shade room -3",
-    price: "₦15,000",
-    mainImage: productImagePath("Shade room -3, 15k.jpeg"),
-    images: [
-      productImagePath("Shade room -3, 15k.jpeg"),
-      productImagePath("Shade room -3.jpg"),
-    ],
-    gender: "UNISEX",
-    soldOut: false,
-  },
-  {
-    slug: "shade-room-4",
-    name: "Shade room -4",
-    price: "₦10,000",
-    mainImage: productImagePath("Shade room -4, 10k.jpeg"),
-    images: [
-      productImagePath("Shade room -4, 10k.jpeg"),
-      productImagePath("Shade room -4.jpeg"),
-    ],
-    soldOut: false,
-  },
-  {
-    slug: "shade-room-5",
-    name: "Shade room -5",
-    price: "₦15,000",
-    mainImage: productImagePath("Shade room -5, 15k.jpeg"),
-    images: [
-      productImagePath("Shade room -5, 15k.jpeg"),
-      productImagePath("Shade room -5.jpeg"),
-    ],
-    gender: "UNISEX",
-    soldOut: false,
-  },
-  {
-    slug: "shade-room-6",
-    name: "Shade room -6",
-    price: "₦10,000",
-    mainImage: productImagePath("Shade room -6, 10k.jfif"),
-    images: [
-      productImagePath("Shade room -6, 10k.jfif"),
-      productImagePath("Shade room -6.jfif"),
-    ],
-    soldOut: false,
-  },
-  {
-    slug: "shade-room-7",
-    name: "Shade room -7",
-    price: "₦15,000",
-    mainImage: productImagePath("Shade room -7, 15k.jfif"),
-    images: [
-      productImagePath("Shade room -7, 15k.jfif"),
-      productImagePath("Shade room -7.jfif"),
-    ],
-    gender: "UNISEX",
-    soldOut: false,
-  },
-  {
-    slug: "shade-room-8",
-    name: "Shade room -8",
-    price: "₦15,000",
-    mainImage: productImagePath("Shade room -8, 15k.jfif"),
-    images: [
-      productImagePath("Shade room -8, 15k.jfif"),
-      productImagePath("Shade room -8.jpeg"),
-    ],
-    soldOut: false,
-  },
-  {
-    slug: "shade-room-9",
-    name: "Shade room -9",
-    price: "₦15,000",
-    mainImage: productImagePath("Shade room -9, 15k.jfif"),
-    images: [
-      productImagePath("Shade room -9, 15k.jfif"),
-      productImagePath("Shade room -9.jfif"),
-    ],
-    gender: "UNISEX",
-    soldOut: false,
-  },
-  {
-    slug: "shade-room-10",
-    name: "Shade room -10",
-    price: "₦12,000",
-    mainImage: productImagePath("Shade room -10, 12k.jfif"),
-    images: [
-      productImagePath("Shade room -10, 12k.jfif"),
-      productImagePath("Shade room -10.jfif"),
-    ],
-    soldOut: false,
-  },
-  {
-    slug: "shade-room-11",
-    name: "Shade room -11",
-    price: "₦17,000",
-    mainImage: productImagePath("Shade room -11, 17k.jfif"),
-    images: [
-      productImagePath("Shade room -11, 17k.jfif"),
-      productImagePath("Shade room -11.jfif"),
-    ],
-    gender: "UNISEX",
-    soldOut: false,
-  },
-  {
-    slug: "shade-room-12",
-    name: "Shade room -12",
-    price: "₦12,000",
-    mainImage: productImagePath("Shade room -12, 12k.jfif"),
-    images: [
-      productImagePath("Shade room -12, 12k.jfif"),
-      productImagePath("Shade room -12.jfif"),
-    ],
-    gender: "UNISEX",
-    soldOut: false,
-  },
-  {
-    slug: "shade-room-13",
-    name: "Shade room -13",
-    price: "₦15,000",
-    mainImage: productImagePath("Shade room -13, 15k.jfif"),
-    images: [
-      productImagePath("Shade room -13, 15k.jfif"),
-      productImagePath("Shade room -13.jfif"),
-    ],
-    gender: "UNISEX",
-    soldOut: false,
-  },
-  {
-    slug: "shade-room-14",
-    name: "Shade room -14",
-    price: "₦15,000",
-    mainImage: productImagePath("Shade room -14, 15k.jfif"),
-    images: [
-      productImagePath("Shade room -14, 15k.jfif"),
-      productImagePath("Shade room -14.jfif"),
-    ],
-    gender: "UNISEX",
-    soldOut: false,
-  },
-  {
-    slug: "shade-room-15",
-    name: "Shade room -15",
-    price: "₦16,000",
-    mainImage: productImagePath("Shade room -15, 16k.jfif"),
-    images: [
-      productImagePath("Shade room -15, 16k.jfif"),
-      productImagePath("Shade room -15.jfif"),
-    ],
-    gender: "UNISEX",
-    soldOut: false,
-  },
-  {
-    slug: "shade-room-16",
-    name: "Shade room -16",
-    price: "₦13,000",
-    mainImage: productImagePath("Shade room -16, 13k.jfif"),
-    images: [
-      productImagePath("Shade room -16, 13k.jfif"),
-      productImagePath("Shade room -16.jfif"),
-    ],
-    gender: "UNISEX",
-    soldOut: false,
-  },
-  {
-    slug: "shade-room-17",
-    name: "Shade room -17",
-    price: "₦17,000",
-    mainImage: productImagePath("Shade room -17, 17k.jfif"),
-    images: [
-      productImagePath("Shade room -17, 17k.jfif"),
-      productImagePath("Shade room -17.jfif"),
-    ],
-    gender: "UNISEX",
-    soldOut: false,
-  },
-  {
-    slug: "shade-room-18",
-    name: "Shade room -18",
-    price: "₦20,000",
-    mainImage: productImagePath("Shade room -18, 20k.jfif"),
-    images: [
-      productImagePath("Shade room -18, 20k.jfif"),
-      productImagePath("Shade room -18.jfif"),
-    ],
-    gender: "UNISEX",
-    soldOut: false,
-  },
-  {
-    slug: "shade-room-19",
-    name: "Shade room -19",
-    price: "₦15,000",
-    mainImage: productImagePath("Shade room -19, 15k.jfif"),
-    images: [
-      productImagePath("Shade room -19, 15k.jfif"),
-      productImagePath("Shade room -19.jfif"),
-    ],
-    soldOut: false,
-  },
-  {
-    slug: "shade-room-20",
-    name: "Shade room 20",
-    price: "₦15,000",
-    mainImage: productImagePath("Shade room 20, 15k.jfif"),
-    images: [
-      productImagePath("Shade room 20, 15k.jfif"),
-      productImagePath("Shade room -20.jfif"),
-    ],
-    gender: "UNISEX",
-    soldOut: false,
-  },
-  {
-    slug: "shade-room-21",
-    name: "Shade room 21",
-    price: "₦20,000",
-    mainImage: productImagePath("Shade room 21, 20k.jfif"),
-    images: [
-      productImagePath("Shade room 21, 20k.jfif"),
-      productImagePath("Shade room 21.jfif"),
-    ],
-    gender: "UNISEX",
-    soldOut: false,
-  },
-];
+// These labels cannot be inferred from an image filename, so preserve the
+// existing catalogue values. Newly discovered products have no gender label.
+const UNISEX_PRODUCT_SLUGS = new Set([
+  "shade-room-3",
+  "shade-room-5",
+  "shade-room-7",
+  "shade-room-9",
+  "shade-room-11",
+  "shade-room-12",
+  "shade-room-13",
+  "shade-room-14",
+  "shade-room-15",
+  "shade-room-16",
+  "shade-room-17",
+  "shade-room-18",
+  "shade-room-20",
+  "shade-room-21",
+]);
+
+// Add a product slug here to remove it from the shop, product pages, and
+// checkout pages. Remove the slug to make the product available again.
+// Example: "shade-room-22",
+const UNAVAILABLE_PRODUCT_SLUGS = new Set<string>(["shade-room-14"]);
+
+type ProductImageGroup = {
+  files: string[];
+  mainFile?: string;
+  name?: string;
+  priceInThousands?: number;
+};
+
+function createSlug(name: string) {
+  return name
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+function productImagePath(fileName: string) {
+  return `${PRODUCT_IMAGE_URL}/${fileName}`;
+}
+
+function formatPrice(priceInThousands: number) {
+  return `\u20A6${(priceInThousands * 1000).toLocaleString("en-NG")}`;
+}
+
+function discoverProducts(): Product[] {
+  const fileNames = readdirSync(PRODUCT_IMAGE_DIRECTORY, { withFileTypes: true })
+    .filter(
+      (entry) =>
+        entry.isFile() && SUPPORTED_IMAGE_EXTENSIONS.has(extname(entry.name).toLowerCase()),
+    )
+    .map((entry) => entry.name);
+
+  const groups = new Map<string, ProductImageGroup>();
+
+  for (const fileName of fileNames) {
+    const stem = parse(fileName).name;
+    const priceMatch = stem.match(/^(.*?),\s*(\d+(?:\.\d+)?)k$/i);
+    const productName = (priceMatch?.[1] ?? stem.split(",", 1)[0]).trim();
+    const slug = createSlug(productName);
+
+    if (!slug) {
+      continue;
+    }
+
+    const group = groups.get(slug) ?? { files: [] };
+    group.files.push(fileName);
+
+    if (priceMatch) {
+      if (group.mainFile) {
+        throw new Error(
+          `Product "${slug}" has more than one priced main image: "${group.mainFile}" and "${fileName}".`,
+        );
+      }
+
+      group.mainFile = fileName;
+      group.name = productName;
+      group.priceInThousands = Number(priceMatch[2]);
+    }
+
+    groups.set(slug, group);
+  }
+
+  const nameSorter = new Intl.Collator("en", { numeric: true, sensitivity: "base" });
+
+  return Array.from(groups.entries())
+    .filter((entry): entry is [string, ProductImageGroup & Required<Pick<ProductImageGroup, "mainFile" | "name" | "priceInThousands">>] => {
+      const [, group] = entry;
+      return Boolean(group.mainFile && group.name && group.priceInThousands !== undefined);
+    })
+    .map(([slug, group]) => {
+      const galleryFiles = group.files
+        .filter((fileName) => fileName !== group.mainFile)
+        .sort(nameSorter.compare);
+
+      return {
+        slug,
+        name: group.name,
+        price: formatPrice(group.priceInThousands),
+        mainImage: productImagePath(group.mainFile),
+        images: [group.mainFile, ...galleryFiles].map(productImagePath),
+        gender: UNISEX_PRODUCT_SLUGS.has(slug) ? ("UNISEX" as const) : undefined,
+        soldOut: UNAVAILABLE_PRODUCT_SLUGS.has(slug),
+      };
+    })
+    .sort((first, second) => nameSorter.compare(first.name, second.name));
+}
+
+export const products: Product[] = discoverProducts().filter((product) => !product.soldOut);
 
 export function getProductBySlug(slug: string) {
   return products.find((product) => product.slug === slug);
