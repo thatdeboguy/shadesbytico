@@ -6,6 +6,7 @@ import { CopyableBankDetails } from "../../CopyableBankDetails";
 const WHATSAPP_NUMBER = "2349036419473";
 
 type ProductPurchasePanelProps = {
+  availableColor?: string;
   gender?: string;
   name: string;
   price: string;
@@ -13,6 +14,7 @@ type ProductPurchasePanelProps = {
 };
 
 export function ProductPurchasePanel({
+  availableColor,
   gender,
   name,
   price,
@@ -57,6 +59,7 @@ export function ProductPurchasePanel({
       <div className="product-properties" aria-label="Product properties">
         {gender && <span>{gender}</span>}
         <span>{soldOut ? "SOLD OUT" : "AVAILABLE"}</span>
+        {availableColor && <span>AVAILABLE IN {availableColor.toUpperCase()}</span>}
       </div>
 
       <button

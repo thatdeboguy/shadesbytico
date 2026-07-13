@@ -62,6 +62,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
         </div>
 
         <ProductPurchasePanel
+          availableColor={product.availableColor}
           gender={product.gender}
           name={product.name}
           price={product.price}

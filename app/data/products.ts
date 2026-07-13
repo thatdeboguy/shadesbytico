@@ -8,6 +8,7 @@ export type Product = {
   mainImage: string;
   images: string[];
   gender?: "UNISEX";
+  availableColor?: string;
   soldOut: boolean;
 };
 
@@ -46,6 +47,13 @@ const UNISEX_PRODUCT_SLUGS = new Set([
 // checkout pages. Remove the slug to make the product available again.
 // Example: "shade-room-22",
 const UNAVAILABLE_PRODUCT_SLUGS = new Set<string>(["shade-room-14"]);
+
+// Add or edit a product's available color here. Products omitted from this
+// list will not display a color badge.
+const PRODUCT_COLORS: Record<string, string> = {
+  // "shade-room-1": "BLACK",
+  "shade-room-22": "BLACK ALSO",
+};
 
 type ProductImageGroup = {
   files: string[];
@@ -126,6 +134,7 @@ function discoverProducts(): Product[] {
         mainImage: productImagePath(group.mainFile),
         images: [group.mainFile, ...galleryFiles].map(productImagePath),
         gender: UNISEX_PRODUCT_SLUGS.has(slug) ? ("UNISEX" as const) : undefined,
+        availableColor: PRODUCT_COLORS[slug],
         soldOut: UNAVAILABLE_PRODUCT_SLUGS.has(slug),
       };
     })
