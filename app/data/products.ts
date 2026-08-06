@@ -46,7 +46,10 @@ const UNISEX_PRODUCT_SLUGS = new Set([
 // Add a product slug here to remove it from the shop, product pages, and
 // checkout pages. Remove the slug to make the product available again.
 // Example: "shade-room-22",
-const UNAVAILABLE_PRODUCT_SLUGS = new Set<string>(["shade-room-14"]);
+const UNAVAILABLE_PRODUCT_SLUGS = new Set<string>([
+  "shade-room-2",
+  "shade-room-14",
+]);
 
 // Add or edit a product's available color here. Products omitted from this
 // list will not display a color badge.
