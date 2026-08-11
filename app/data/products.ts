@@ -43,8 +43,8 @@ const UNISEX_PRODUCT_SLUGS = new Set([
   "shade-room-21",
 ]);
 
-// Add a product slug here to remove it from the shop, product pages, and
-// checkout pages. Remove the slug to make the product available again.
+// Add a product slug here to mark it as sold out. Sold-out products remain
+// visible in the shop, but their purchase button is disabled.
 // Example: "shade-room-22",
 const UNAVAILABLE_PRODUCT_SLUGS = new Set<string>([
   "shade-room-2",
@@ -144,7 +144,7 @@ function discoverProducts(): Product[] {
     .sort((first, second) => nameSorter.compare(first.name, second.name));
 }
 
-export const products: Product[] = discoverProducts().filter((product) => !product.soldOut);
+export const products: Product[] = discoverProducts();
 
 export function getProductBySlug(slug: string) {
   return products.find((product) => product.slug === slug);
